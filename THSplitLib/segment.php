@@ -1,11 +1,4 @@
 <?php
-
-/**
- * Title: Thai Splitter Lib
- * Author: Suwicha Phuak-im
- * Email: suwichalala@gmail.com
- * Website: http://www.projecka.com
- */
 class Segment {
 
     private $_input_string;

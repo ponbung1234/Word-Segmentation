@@ -1,17 +1,9 @@
 <?php
-/**
- * Title: Thai Splitter Lib
- * Author: Suwicha Phuak-im
- * Email: suwichalala@gmail.com
- * Website: http://www.projecka.com
- */
+
 class Unicode {
 
     function uni_ord_list_to_string($ords, $encoding = 'UTF-8') {
-        /*
-          By Darien Hager, Jan 2007... Use however you wish, but please
-          please give credit in source comments.
-         */
+
         $str = '';
         for ($i = 0; $i < sizeof($ords); $i++) {
             $v = $ords[$i];
@@ -22,10 +14,7 @@ class Unicode {
     }
 
     function string_to_uni_ord_list($str, $encoding = 'UTF-8') {
-        /*
-          By Darien Hager, Jan 2007... Use however you wish, but please
-          please give credit in source comments.
-         */
+
         $str = mb_convert_encoding($str, "UCS-4BE", $encoding);
         $ords = array();
         for ($i = 0; $i < mb_strlen($str, "UCS-4BE"); $i++) {
