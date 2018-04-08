@@ -48,75 +48,27 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
 <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
 <div class="w3-main" style="margin-left:250px">
-
-  <div class="w3-row w3-padding-64">
-    <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Word Segmentation (THAI)</h1>
-      <p>
-        
-        <form method="post">
-            <b>Insert : </b><br/>
-            <textarea name="text_to_segment" cols="40" rows="50" placeholder="Enter any Word here.." style="width:700px;height:270px;"><?php echo isset($_POST['text_to_segment'])?  trim($_POST['text_to_segment']):'' ?></textarea>
-            <br/>
-            <input type="submit" value="Submit" style="width:700px;height:40px;font-size:18px;background: #eee"/>
-            
-        </form>
-
-
-      </p>
-    </div>
-    <h1 class="w3-text-teal">OUT PUT</h1>
-    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Output: </b><br/>
-    <div class="w3-third w3-container">
-      <div class="w3-border w3-padding-large w3-padding-32 w3-center">
-     
-    <?php
-        if ($_POST) {
-            
-            $time_start = microtime(true);
-            
-            $text_to_segment = trim($_POST['text_to_segment']);
-            /*echo '<hr/>';*/
-            //echo '<b>ประโยคที่ต้องการตัดคือ: </b>' . $text_to_segment . '<br/>';
-            include(dirname(__FILE__) . DIRECTORY_SEPARATOR . 'THSplitLib/segment.php');
-            $segment = new Segment();
-            //echo '<hr/>';
-            $result = $segment->get_segment_array($text_to_segment);
-            echo implode(' | ', $result);
-
-            function convert($size) {
-                $unit = array('b', 'kb', 'mb', 'gb', 'tb', 'pb');
-                return @round($size / pow(1024, ($i = floor(log($size, 1024)))), 2) . ' ' . $unit[$i];
-            }
-            $time_end = microtime(true);
-            $time = $time_end - $time_start;
-
-            echo '<br/><b>Process time: </b> '.round($time,4).' วินาที';
-            echo '<br/><b>Memory Usage:</b> ' . convert(memory_get_usage());
-           
-            foreach($result as $row)
-            {
-                if (mb_strlen($row) > 12)
-                {
-                    echo $row.'<br/>';
-                }
-            }
-        }
-        ?>
-
-        </div>
-
-
-
-     
+<div class="w3-padding-32">
+  
+</div>
+  <div class="w3-row">
+    <div class=" w3-container">
+      <h1 class="w3-text-teal w3-center">ABOUT THIS PROGRAM</h1>  
+      
     </div>
   </div>
 
   <div class="w3-row">
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">How to use the Program</h1>
+      <h2 class="w3-test">Introduction</h2>
+       <p>This program is a part of CSS432 Information Retrieval subject</p>
+        <h2 class="w3-test">Member</h2>
+       <p>1.) Thanapon Arch-int 5822791802<br>
+          2.) Chayaphat Nicrothanon 5822791828<br>
+          3.) Pannathorn Naksung 5822793899<br></p>
+      <h2 class="w3-text">How to use the Program</h2>
       <p>Our program is a word segmentation tool.It can be use in both Thai and Engish. Simply press tab Word Segmentation(THAI) to use thai language segmentator and tab Word Segmentation(ENG) to use english language segmentator.<br> Input the sentences you want to segment into insert box then press submit the segmented word will be shown on the output box.</p>
-      <h1 class="w3-text-teal">How to does this work</h1>
+      <h2 class="w3-text">How to does this work</h2>
       <p>In english we simply use space between words to segment the word.</br>In thai it's a little bit more complicated we load dictionary that contain words then we use longest matching algorithm to determine what word is it.In longest matching algorithms will detect string of words then it will try to find longest word possible that appear in the dictionary that it will determine that it is a word and move on to the next.The possible weaknest of this is for example the word "ตากลม" will always determined to be the word ตากลม never the word ตาขกลม regarding the context. </p>
     </div>
 

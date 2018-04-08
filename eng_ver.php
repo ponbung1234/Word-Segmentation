@@ -51,7 +51,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
 
   <div class="w3-row w3-padding-64">
     <div class="w3-twothird w3-container">
-      <h1 class="w3-text-teal">Word Segmentation (THAI)</h1>
+      <h1 class="w3-text-teal">Word Segmentation (ENGLISH)</h1>
       <p>
         
         <form method="post">
@@ -112,7 +112,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     </div>
   </div>
 
-  <div class="w3-row">
+<div class="w3-row">
     <div class="w3-twothird w3-container">
       <h1 class="w3-text-teal">How to use the Program</h1>
       <p>Our program is a word segmentation tool.It can be use in both Thai and Engish. Simply press tab Word Segmentation(THAI) to use thai language segmentator and tab Word Segmentation(ENG) to use english language segmentator.<br> Input the sentences you want to segment into insert box then press submit the segmented word will be shown on the output box.</p>
@@ -121,7 +121,6 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif;}
     </div>
 
   </div>
-
 
 
 
